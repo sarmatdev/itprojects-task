@@ -1,0 +1,88 @@
+// TITLE
+@mixin title {
+  font-size: 2rem;
+  color: var(--primary);
+}
+
+// CARD
+@mixin card {
+  min-height: 10rem;
+  max-width: 40rem;
+  width: 100%;
+  margin-top: 2rem;
+  border-radius: 1rem;
+  padding: 2rem;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-around;
+  background-color: var(--grey-dark);
+}
+
+// MODAL
+@mixin modal {
+  .modal-wrapper {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    transition: opacity 0.2s ease;
+    right: 0;
+    z-index: 11;
+    background-color: rgba(00, 00, 00, 0.5);
+  }
+
+  .modal {
+    position: relative;
+    max-width: 60rem;
+    width: 100%;
+    max-height: 30rem;
+    height: auto;
+    padding: 20px 18px;
+    background-color: var(--white);
+    transition: all 0.2s ease;
+    border-radius: 1rem;
+    z-index: 111;
+    overflow-y: scroll;
+
+    &__title {
+      font-size: 2rem;
+      color: var(--secondary);
+    }
+
+    &__tasks {
+      display: flex;
+      align-items: center;
+      margin-bottom: 2rem;
+    }
+
+    &__actions {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding-top: 2rem;
+      border-radius: 1rem;
+      background-color: var(--secondary);
+      padding: 1rem;
+      margin-top: 3rem;
+    }
+
+    &__button {
+      position: absolute;
+      top: 1rem;
+      right: 1rem;
+    }
+  }
+  .modal-fade-enter,
+  .modal-fade-leave-active {
+    opacity: 0;
+  }
+
+  .modal-fade-enter-active,
+  .modal-fade-leave-active {
+    transition: all 0.3s ease;
+  }
+}
